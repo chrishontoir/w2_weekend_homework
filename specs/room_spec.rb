@@ -124,4 +124,9 @@ class RoomTest < MiniTest::Test
     assert_equal(0, room5.guest_count)
     assert_equal("Sorry, there's no space available.", room5.add_guest_to_room_if_enough_money_and_space(availability, enough_money, @guest1))
   end
+
+  def test_guest_cheer_favourite_song
+    room6 = Room.new("Turquoise Room", 2, [], ["Step into Christmas"], 5)
+    assert_equal("Whoo!", room6.guest_cheer_favourite_song(@guest1))
+  end
 end

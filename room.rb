@@ -71,4 +71,12 @@ class Room
     end
   end
 
+  def guest_cheer_favourite_song(guest)
+    for song in @room_playlist_array
+      if guest.guest_favourite_song == song
+        return guest.guest_talk
+      end
+    end
+  end
+
 end
