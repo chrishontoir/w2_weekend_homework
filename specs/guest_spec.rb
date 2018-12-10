@@ -20,4 +20,7 @@ class GuestTest < MiniTest::Test
     assert_equal(20, @guest.guest_money)
   end
 
+  def test_guest_talk
+    assert_equal("Whoo!", @guest.guest_talk)
+  end
 end

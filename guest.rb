@@ -8,4 +8,8 @@ class Guest
     @guest_money = guest_money
   end
 
+  def guest_talk
+    return "Whoo!"
+  end
+
 end
