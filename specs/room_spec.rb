@@ -27,4 +27,8 @@ class RoomTest < MiniTest::Test
   def test_room_price
     assert_equal(5, @room.room_price)
   end
+
+  def test_guest_count
+    assert_equal(0, @room.guest_count)
+  end
 end

@@ -10,5 +10,9 @@ class Room
     @room_price = room_price
   end
 
+  def guest_count
+    return @room_guest_array.length
+  end
+
 
 end
