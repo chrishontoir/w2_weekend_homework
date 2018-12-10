@@ -14,5 +14,13 @@ class Room
     return @room_guest_array.length
   end
 
+  def add_guest_to_room(guest)
+    @room_guest_array.push(guest)
+  end
+
+  def remove_guest_from_room(guest)
+    @room_guest_array.delete(guest)
+  end
+
 
 end

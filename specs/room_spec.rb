@@ -1,6 +1,7 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../room')
+require_relative('../guest')
 
 class RoomTest < MiniTest::Test
 
@@ -30,5 +31,20 @@ class RoomTest < MiniTest::Test
 
   def test_guest_count
     assert_equal(0, @room.guest_count)
+  end
+
+  def test_add_guest_to_room
+    guest1 = Guest.new("Chris", "Step into Christmas", 100)
+    @room.add_guest_to_room(guest1)
+    assert_equal(1, @room.guest_count)
+  end
+
+  def test_remove_guest_from_room
+    guest1 = Guest.new("Bob", "Merry Christmas Everyone", 50)
+    guest2 = Guest.new("Sally", "Last Christmas", 1500)
+    @room.add_guest_to_room(guest1)
+    @room.add_guest_to_room(guest2)
+    @room.remove_guest_from_room(guest1)
+    assert_equal(1, @room.guest_count)
   end
 end
